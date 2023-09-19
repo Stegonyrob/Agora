@@ -23,6 +23,10 @@ const CircularMenu = () => {
   return (
     <div className="planet" onClick={() => setIsPlanetActive(!isPlanetActive)}>
       <img src={centralPlanetImg} alt="Planeta central" className="planet" />
+      {/* <a href="https://api.whatsapp.com/send?phone=NUMERO_DE_TELEFONO" target="_blank" rel="noopener noreferrer">
+        <i className="fab fa-whatsapp"></i>
+        <a href="https://api.whatsapp.com/send?phone=15551234567" target="_blank">¡Chatea con nosotros por WhatsApp!</a> */}
+
       {isPlanetActive &&
         satellites.map((satellite, i) => (
           <Satellite
