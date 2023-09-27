@@ -1,47 +1,60 @@
-import ReactDom from react-DOM;
 import React, { useState } from "react";
-import LinksNav from "./LinksNav";
 import centralPlanetImg from "../agora-logo.png";
 
 const NavBar = () => {
   const [isActive, setIsActive] = useState(false);
-  const  LinksNav= [
-    "Servicios",
-    "Instalaciones",
-    "Información",
-    "Contacto",
-    "Sobre mí",
-    "Neurodiversidad",
-  ];
-return(
+
+  const toggleMenu = () => {
+    setIsActive(!isActive);
+  };
+
+  return (
     <nav className="navbar">
-        <div className="navbar-container">
-
-        
-      <img src={centralPlanetImg} alt="Logo" className="logo" />
+      <div className="navbar-container">
+        <img src={centralPlanetImg} alt="Logo" className="logo" />
+      </div>
+      <button
+        className={`hamburger ${isActive ? "is-active" : ""}`}
+        onClick={toggleMenu}
+      >
+        <div className="hamburger-box">
+          <div className="hamburger-inner"></div>
         </div>
+      </button>
+
+      {isActive && (
+        <div className="navigation-menu">
+          <ul>
+            <a href="https://localhost:3000/AboutMe" target="_blank">
+              Sobre Mí
+            </a>
+            <a href="https://localhost:3000/Neurodiversity" target="_blank">
+              Neurodiversidad
+            </a>
+            <a href="https://localhost:3000/Services" target="_blank">
+              Servicios
+            </a>
+            <a href="https://localhost:3000/Information" target="_blank">
+              Información
+            </a>
+            <a href="https://localhost:3000/Instalaciones" target="_blank">
+              Instalaciones
+            </a>
+            <a href="https://localhost:3000/Contact" target="_blank">
+              Contacto
+            </a>
+          </ul>
+        </div>
+      )}
     </nav>
-)
-
-
- 
-      {/* <a href="https://api.whatsapp.com/send?phone=NUMERO_DE_TELEFONO" target="_blank" rel="noopener noreferrer">
-        <i className="fab fa-whatsapp"></i>
-        <a href="https://api.whatsapp.com/send?phone=15551234567" target="_blank">¡Chatea con nosotros por WhatsApp!</a> */}
-
-      {isActive &&
-        LinksNav.map(())
-          <Satellite
-            key={i}
-            className={`satellite${i + 1}`}
-            onClick={() => (window.location.href = `/${satellite}`)}
-            style={satelliteStyles[i]}
-          >
-            {satellite}
-          </Satellite>
-        ))}
-    </div>
   );
 };
 
-export default CircularMenu;
+export default NavBar;
+
+/* <div className="hamburger hamburger--vortex">
+    <div className="hamburger-box">
+      <div className="hamburger-inner"></div>
+    </div>
+  </div>
+  <code>hamburger--vortex</code> */

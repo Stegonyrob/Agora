@@ -51,3 +51,34 @@ body {
     width: 70%;
   }
 }
+/*Navbar*/
+/*menu-hamburger*/
+ 
+code {
+  display: inline-block;
+}
+
+code,
+.hamburger {
+  vertical-align: middle;
+}
+@media (max-width: 768px) {
+  .navbar {
+    /* Estilos para pantallas más pequeñas */
+  }
+}
+@media (max-width: 768px) {
+  .navbar {
+    /* Estilos para pantallas más pequeñas */
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .navigation-menu {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
