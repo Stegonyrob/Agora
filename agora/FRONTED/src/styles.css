@@ -1,3 +1,7 @@
+/* 1- BODY
+   2- CIRCULAR MENU
+   3- NAVBAR*/
+   /* 1- BODY*/
 body {
   background-image: url('pexels-juan-pablo-serrano-arenas-1242348.jpg');
   background-size: 100%;
@@ -9,7 +13,7 @@ body {
   margin: 0;
   overflow: hidden;
 }
-
+/*2- CIRCULAR MENU*/
 .planet {
   border-radius: 50% !important;
   background-image: url('./agora-logo.png');
@@ -18,6 +22,7 @@ body {
   position: relative;
   background-size: cover;
   background-repeat: no-repeat;
+  width:280px;
 }
 
 .satellite {
@@ -30,13 +35,15 @@ body {
   cursor: pointer;
   border-radius: 50%;
   box-shadow: 0px 0px 10px #b21cee;
-  margin-left:35%;
-  margin-top:-65%;
+  margin-left:20%;
+  margin-top:-80%;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-weight: bold;}
+  font-weight: bold;
+}
+
 .satellite:hover{
   background-color:rgb(194, 147, 238) ;
 }
@@ -51,28 +58,94 @@ body {
     width: 70%;
   }
 }
-/*Navbar*/
-/*menu-hamburger*/
- 
-code {
-  display: inline-block;
+/* 3- NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #c00a37;
+  height: 300px;
+  width: 100%;
+}
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #c00a37;
+  height: 300px;
+  width: 100%;
 }
 
-code,
+.logo {
+  height: 100%;
+}
+
+/* Menú hamburguesa */
 .hamburger {
-  vertical-align: middle;
+  display: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
-@media (max-width: 768px) {
-  .navbar {
-    /* Estilos para pantallas más pequeñas */
-  }
+
+.hamburger-box {
+  width: 30px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
 }
-@media (max-width: 768px) {
-  .navbar {
-    /* Estilos para pantallas más pequeñas */
-    flex-direction: column;
-  }
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
 }
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 30px;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 4px;
+  position: absolute;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: "";
+}
+
+.hamburger-inner::before {
+  top: -10px;
+}
+
+.hamburger-inner::after {
+  bottom: -10px;
+}
+
+/* Menú de navegación */
+.navigation-menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navigation-menu.is-active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #b21cee;
+  width: 100%;
+}
+
+.navigation-menu.is-active a {
+  display: block;
+  padding: 1rem;
+}
+
 @media (max-width: 768px) {
   .navigation-menu {
     display: none;
@@ -80,5 +153,12 @@ code,
 
   .hamburger {
     display: block;
+    position: relative;
+    z-index: 1;
+    margin-right: 1rem;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
   }
 }
+

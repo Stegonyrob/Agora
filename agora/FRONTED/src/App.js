@@ -1,29 +1,27 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import CircularMenu from "./components/Home";
-import Services from "./Views/ServiceView";
-import Instalaciones from "./Views/InstalacionesView";
-import Information from "./Views/InformationView";
-import ContactUs from "./Views/ContactUsView";
-import AboutMe from "./Views/AboutMeView";
-import Neurodiversity from "./Views/NeurodiversityView";
+import CircularMenuView from "./Views/CircularMenuView";
+import ServiceView from "./Views/ServiceView";
+import InstalacionesView from "./Views/InstalacionesView";
+import InformationView from "./Views/InformationView";
+import ContactUsView from "./Views/ContactUsView";
+import AboutMeView from "./Views/AboutMeView";
+import NeurodiversityView from "./Views/NeurodiversityView";
+
 import "./styles.css";
-const App = () => {
+
+export default function App() {
   return (
     <Router>
-      <div className="app-container">
-        <Routes>
-          <Route path="/AboutMe" element={<AboutMe />} />
-          <Route path="/Neurodiversity" element={<Neurodiversity />} />
-          <Route path="/Services" element={<Services />} />
-          <Route path="/Information" element={<Information />} />
-          <Route path="/Instalaciones" element={<Instalaciones />} />
-          <Route path="/Contact" element={<ContactUs />} />
-          <Route path="/" element={<CircularMenu />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<CircularMenuView />} />
+        <Route path="/AboutMe" element={<AboutMeView />} />
+        <Route path="/Neurodiversity" element={<NeurodiversityView />} />
+        <Route path="/Services" element={<ServiceView />} />
+        <Route path="/Information" element={<InformationView />} />
+        <Route path="/Instalaciones" element={<InstalacionesView />} />
+        <Route path="/Contact" element={<ContactUsView />} />
+      </Routes>
     </Router>
   );
-};
-
-export default App;
+}

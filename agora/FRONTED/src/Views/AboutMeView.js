@@ -1,10 +1,12 @@
 import React from "react";
-import NavBar from "../components/NavBar";
+import AboutMe from "../Components/AboutMe/AboutMe";
 
-export default function AboutMe() {
+const AboutMeView = () => {
   return (
     <div>
-      <NavBar />
+      <AboutMe />
     </div>
   );
-}
+};
+
+export default AboutMeView;
